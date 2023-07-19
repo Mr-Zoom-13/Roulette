@@ -49,7 +49,7 @@ $(document).ready(function () {
             $('.list li:eq(' + g + ')').css({border: '4px solid #00ba00'});
             const modal = new ItcModal({
                 title: data.win_username,
-                content: `<img src="${data.win_photo}" alt="" /><br/><h1 class="text_win">${data.win_summ}</h1>`
+                content: `<img src="${data.win_photo}" alt="" /><br/><h1 class="text_win">${data.win_summ}</h1><br/><h1 class="text_win">${data.win_prc}%</h1>`
             });
             setTimeout(() => {
                 modal.show();
