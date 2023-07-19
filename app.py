@@ -9,7 +9,14 @@ from data.logs import Log
 
 @app.route('/')
 def sockets():
-    return render_template('index.html')
+    db_ses = db_session.create_session()
+    logs = []
+    for log in db_ses.query(Log).all():
+        if log.winner_id:
+            logs.append(log.to_dict(rules=('-users.log',)))
+            logs[-1]['winner'] = db_ses.query(User).get(log.winner_id).to_dict(rules=("-log",))
+    logs = logs[::-1]
+    return render_template('index.html', logs=logs)
 
 
 @app.route('/manage', methods=['GET', 'POST'])
@@ -43,18 +50,6 @@ def manage_page():
                         "users": [user.to_dict(rules=('-log',)) for user in log.users]},
                                     broadcast=True)
     return render_template('manage.html', com=log.com)
-
-
-@app.route('/history')
-def history_page():
-    db_ses = db_session.create_session()
-    logs = []
-    for log in db_ses.query(Log).all():
-        if log.winner_id:
-            logs.append(log.to_dict(rules=('-users.log',)))
-            logs[-1]['winner'] = db_ses.query(User).get(log.winner_id).to_dict(rules=("-log",))
-    logs = logs[::-1]
-    return render_template('history.html', logs=logs)
 
 
 @app.route('/history/<int:log_id>')

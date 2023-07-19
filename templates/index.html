@@ -14,11 +14,6 @@
 </head>
 <body>
 <script src="/static/scripts/modal.js"></script>
-<div class="button_menu">
-    <a href="/">Главная</a>
-    <a href="/history">История</a>
-    <a href="/manage">Управление</a>
-</div>
 <div class="wraper">
     <div class="arrowup"></div>
     <div class="arrowdown"></div>
@@ -40,6 +35,19 @@
 </div>
 <ul class="spisok">
 </ul>
+<div class="clear-line"></div>
+<div class="telo">
+    {% for log in logs %}
+    <div class="row_spisok">
+        <span><img src="{{ log.winner.photo }}" alt="avatar"></span>
+        <span>{{ log.winner.username }}</span>
+        <span>{{ (log.summ * (100 - log.com) / 100)|round(2) }}</span>
+        <span>{{ log.winner.prc }}%</span>
+        <span><a href="/history/{{ log.id }}"><img src="/static/img/ico2.png"
+                                                   alt=""></a></span>
+    </div>
+    {% endfor %}
+</div>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
 <script src="/static/scripts/main.js"></script>
 </body>

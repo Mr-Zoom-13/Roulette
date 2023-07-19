@@ -49,12 +49,20 @@ $(document).ready(function () {
             $('.list li:eq(' + g + ')').css({border: '4px solid #00ba00'});
             const modal = new ItcModal({
                 title: data.win_username,
-                content: `<img src="${data.win_photo}" alt="" /><br/><h1 class="text_win">${data.win_summ}</h1><br/><h1 class="text_win">${data.win_prc}%</h1>`
+                content: `<img src="${data.win_photo}" alt="" /><br/><h1 style="display: inline-block" class="text_win">${data.win_summ}</h1><img class="valute" src="/static/img/valute.png"><br/><h1 class="text_win">${data.win_prc}%</h1>`
             });
             setTimeout(() => {
                 modal.show();
                 setTimeout(() => {
                     socket.emit('filling');
+                    $(`<div class="row_spisok">
+        <span><img src="${data.win_photo}" alt="avatar"></span>
+        <span>${data.win_username}</span>
+        <span>${data.win_summ}</span>
+        <span>${data.win_prc}%</span>
+        <span><a href="/history/${data.win_log_id}"><img src="/static/img/ico2.png"
+                                                   alt=""></a></span>
+    </div>`).prependTo($(".telo"))
                 }, 1000)
             }, 700);
         });
