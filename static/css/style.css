@@ -1,0 +1,212 @@
+body {
+    background: #21253e;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    list-style: none;
+    display: inline-block;
+    float: left;
+}
+
+.window {
+    overflow: hidden;
+    position: relative;
+    width: 25000px;
+    height: 143px;
+    right: 0px;
+}
+
+.wraper {
+    position: relative;
+    margin: auto;
+    margin-top: 60px;
+    /* width: 408px; */
+    width: 690px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    border: 4px solid transparent;
+    border-radius: 2px;
+}
+
+.telo {
+    width: 500px;
+    margin: auto;
+    margin-top: 60px;
+    color: #fff;
+}
+
+.telo h1 {
+    text-align: center
+}
+
+.telo label {
+    width: 50%;
+    text-align: right;
+    padding-right: 10px;
+    display: inline-block;
+}
+
+.ac {
+    text-align: center;
+    width: 100%;
+}
+
+.row_spisok {
+    width: 500px;
+    margin: auto;
+    margin-top: 20px;
+    color: #fff;
+    text-align: center;
+}
+
+.row_spisok img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.row_spisok a img {
+    border-radius: 0%;
+}
+
+.row_spisok span {
+    width: 19%;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.button {
+    border-radius: 4px;
+    transition: .25s;
+    background-color: #533;
+    cursor: pointer;
+    color: #fff;
+    width: 200px;
+    outline: none;
+    text-align: center;
+    background: linear-gradient(#f66, #533);
+    background-size: 1px 500%;
+    box-sizing: border-box;
+    border: 2px solid #234;
+    line-height: 32px;
+    font-size: 16px;
+    margin: 10px auto;
+    box-shadow: 0 0 8px #0006;
+    background-position: 0% 100%;
+}
+
+.button:hover {
+    border-color: #422;
+    background-position: 0% 0%;
+    color: #000;
+}
+
+.button_menu {
+    width: 500px;
+    margin: auto;
+    text-align: center;
+}
+
+.button_menu a {
+    border-radius: 4px;
+    display: inline-block;
+    text-decoration: none;
+    transition: .25s;
+    background-color: #533;
+    color: #fff;
+    width: 150px;
+    outline: none;
+    text-align: center;
+    background: linear-gradient(#f66, #533);
+    background-size: 1px 500%;
+    box-sizing: border-box;
+    border: 2px solid #234;
+    line-height: 32px;
+    font-size: 16px;
+    margin: 10px auto;
+    box-shadow: 0 0 8px #0006;
+    background-position: 0% 100%;
+}
+
+.button_menu a:hover {
+    border-color: #422;
+    background-position: 0% 0%;
+    color: #000;
+}
+
+.grad {
+    background: rgb(33, 37, 62);
+    background: linear-gradient(90deg, rgba(33, 37, 62, 1) 0%, rgba(9, 9, 121, 0) 50%, rgba(33, 37, 62, 1) 100%);
+    position: absolute;
+    z-index: 100;
+    width: 100%;
+    height: 150px;
+}
+
+.list {
+    position: relative;
+    display: inline-block;
+}
+
+.list li {
+    border: 4px solid transparent;
+    border-radius: 50%;
+}
+
+.list li img {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+}
+
+.spisok li {
+    margin: 10px 10px 20px;
+    border-radius: 50%;
+}
+
+.spisok {
+    width: 500px;
+    margin: 20px auto;
+    text-align: center;
+    color: #FFF;
+}
+
+.spisok li img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+}
+
+.arrowup {
+    position: absolute;
+    bottom: 0;
+    right: 50%;
+    z-index: 1;
+    width: 0;
+    height: 0;
+    border-bottom: 20px solid #1a96bf;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+}
+
+.arrowdown {
+    position: absolute;
+    top: 0;
+    right: 50%;
+    z-index: 1;
+    width: 0;
+    height: 0;
+    border-top: 20px solid #1a96bf;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+}
+
+.text_win {
+    font-size: 60px;
+    color: white;
+}

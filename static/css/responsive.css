@@ -1,0 +1,78 @@
+/* < 1200 */
+@media screen and (max-width: 1139px) {
+
+
+}
+
+/* < 1024 */
+@media screen and (max-width: 1023px) {
+
+}
+
+/* < 900 */
+@media screen and (max-width: 899px) {
+
+
+}
+
+/* < 768 */
+@media screen and (max-width: 767px) {
+    .wraper {
+        zoom: 0.5;
+    }
+
+    .button_menu {
+        width: 100%;
+    }
+
+    .button_menu a {
+        width: 120px;
+    }
+
+    .spisok {
+        width: 100%;
+    }
+
+    .telo {
+        width: 100%;
+    }
+
+    .telo label {
+        width: 40%;
+    }
+
+    .row_spisok {
+        width: 100%;
+    }
+}
+
+/* < 480 */
+@media (max-width: 480px) {
+
+}
+
+
+/* < 425 */
+@media screen and (max-width: 423px) {
+
+}
+
+@media screen and (max-width: 375px) {
+
+}
+
+/* < 360 */
+@media screen and (max-width: 360px) {
+
+}
+
+/* Retina graphics */
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+    /* @2x */
+    /* для изображений на Retina-устройствах */
+}
+
+
+
+
+
