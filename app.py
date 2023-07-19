@@ -28,27 +28,29 @@ def manage_page():
             log.com = request.values.get('com')
             db_ses.commit()
         else:
-            username = request.values.get('username')
-            summ = int(request.values.get('summ'))
-            if username and summ:
-                user = User()
-                user.username = username
-                user.summ = summ
-                log.summ += summ
-                api = Tiktok()
-                user_tiktok = api.getInfoUser(username=username)
-                if user_tiktok:
-                    user.photo = user_tiktok['users'][username]['avatarLarger']
-                    log.users.append(user)
-                    db_ses.add(user)
-                    db_ses.commit()
-                    for tmp_user in log.users:
-                        tmp_user.prc = round(tmp_user.summ / (log.summ * 0.01), 2)
-                    db_ses.commit()
+            for i in range(1, 11):
+                username = request.values.get('username' + str(i))
+                summ = request.values.get('summ' + str(i))
+                if username and summ:
+                    summ = int(summ)
+                    user = User()
+                    user.username = username
+                    user.summ = summ
+                    log.summ += summ
+                    api = Tiktok()
+                    user_tiktok = api.getInfoUser(username=username)
+                    if user_tiktok:
+                        user.photo = user_tiktok['users'][username]['avatarLarger']
+                        log.users.append(user)
+                        db_ses.add(user)
+                        db_ses.commit()
+                        for tmp_user in log.users:
+                            tmp_user.prc = round(tmp_user.summ / (log.summ * 0.01), 2)
+                        db_ses.commit()
 
-                    socket_app.emit('update_users', {
-                        "users": [user.to_dict(rules=('-log',)) for user in log.users]},
-                                    broadcast=True)
+                        socket_app.emit('update_users', {
+                            "users": [user.to_dict(rules=('-log',)) for user in log.users]},
+                                        broadcast=True)
     return render_template('manage.html', com=log.com)
 
 

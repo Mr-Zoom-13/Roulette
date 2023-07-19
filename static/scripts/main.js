@@ -6,8 +6,6 @@ $(document).ready(function () {
     })
 
     socket.on('update_users', function (data) {
-        console.log("ZASHEL");
-        console.log(data)
         var spisok = $(".spisok"), spisok_roulette = $(".list")
         spisok.empty()
         spisok_roulette.empty()
@@ -27,7 +25,6 @@ $(document).ready(function () {
     })
 
     socket.on('roulette', function (data) {
-        console.log(data)
         $('.window').css({
             right: "0"
         })
@@ -39,7 +36,6 @@ $(document).ready(function () {
             return Math.floor(Math.random() * (max - min + 1)) + min;
         }
         var y_prog = 100 / data.len_users
-        console.log(y_prog)
         var x = y_prog * data.len_users + data.win_id - 1;
         var g = x + 1;
         var y = selfRandom(65, 165);

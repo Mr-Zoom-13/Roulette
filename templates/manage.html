@@ -28,10 +28,13 @@
         <div class="ac"><input class="button" type="submit" value="Изменить"></div>
     </form>
     <form method="POST">
-        <label for="username">Ник в TikTok: @</label><input type="text" id="username"
-                                                            name="username"><br/>
-        <label for="summ">Сумма взноса: </label><input type="number" id="summ"
-                                                       name="summ"><br/>
+        {% for i in range(1, 11) %}
+        <label for="username{{ i }}">{{ i }}. Ник в TikTok: @</label><input type="text" id="username{{ i }}"
+                                                            name="username{{ i }}"><br/>
+        <label for="summ{{ i }}">{{ i }}. Сумма взноса: </label><input type="number" id="summ{{ i }}"
+                                                       name="summ{{ i }}"><br/><br/>
+        {% endfor %}
+
         <div class="ac"><input class="button" type="submit" value="Добавить"></div>
     </form>
 </div>
