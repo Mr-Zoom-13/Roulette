@@ -21,13 +21,13 @@ $(document).ready(function () {
         }
     })
     $('#roulette').click(function () {
+        var audio = new Audio('/static/music/2.mp3');
+        audio.play();
         socket.emit("start_roulette")
     })
 
     socket.on('roulette', function (data) {
         console.log(data)
-        var audio = new Audio('/static/music/2.mp3');
-        audio.play();
         $('.window').css({
             right: "0"
         })
