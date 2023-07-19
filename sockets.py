@@ -53,4 +53,4 @@ class SocketClass(Namespace):
         emit("roulette",
              {"win_id": winner_id, "win_summ": round(log.summ * (100 - log.com) / 100, 2),
               "win_photo": log.users[winner_id].photo,
-              "win_username": log.users[winner_id].username}, broadcast=True)
+              "win_username": log.users[winner_id].username, "len_users": len(log.users)}, broadcast=True)

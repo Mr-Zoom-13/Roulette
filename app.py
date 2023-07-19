@@ -1,6 +1,5 @@
 from config import *
 from flask import render_template, request
-from flask_socketio import emit
 from sockets import SocketClass
 from TiktokApi import *
 from data import db_session
@@ -54,6 +53,7 @@ def history_page():
         if log.winner_id:
             logs.append(log.to_dict(rules=('-users.log',)))
             logs[-1]['winner'] = db_ses.query(User).get(log.winner_id).to_dict(rules=("-log",))
+    logs = logs[::-1]
     return render_template('history.html', logs=logs)
 
 
@@ -69,4 +69,3 @@ if __name__ == "__main__":
     db_session.global_init('db/roulette.db')
     socket_app.on_namespace(SocketClass('/'))
     socket_app.run(app, port=5000)
-    # app.run(host='0.0.0.0', port=5000)

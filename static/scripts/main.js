@@ -38,8 +38,9 @@ $(document).ready(function () {
         function selfRandom(min, max) {
             return Math.floor(Math.random() * (max - min + 1)) + min;
         }
-
-        var x = 101;
+        var y_prog = 100 / data.len_users
+        console.log(y_prog)
+        var x = y_prog * data.len_users + data.win_id - 1;
         var g = x + 1;
         var y = selfRandom(65, 165);
         $('.window').animate({
