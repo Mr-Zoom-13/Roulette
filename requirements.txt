@@ -1,0 +1,8 @@
+Flask==2.2.2
+Flask_SocketIO==5.2.0
+pycryptodome==3.18.0
+requests==2.27.1
+selenium==4.10.0
+SQLAlchemy==1.4.39
+SQLAlchemy_serializer==1.4.1
+webdriver_manager==3.5.4
